@@ -23,9 +23,12 @@ def initiate_file_content(infile, outfile):
 
 def sort_n_print(outfile):
     with open(outfile, 'r') as resultFile:
-        outcomes= sorted(resultFile.readlines(), key=len)
+        outcomes = sorted(resultFile.readlines(), key=len)
         for line in outcomes:
             print(line.strip())
+
+    with open(outfile, 'w') as res:
+        res.write(' '.join(outcomes)+'\n')
 
 
 def check_for_multiples(infile, outfile):
